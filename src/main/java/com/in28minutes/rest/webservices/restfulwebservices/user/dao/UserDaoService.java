@@ -22,7 +22,7 @@ public class UserDaoService {
     }
 
     public User save(User user){
-        if(!(user.getId() > 0)){
+        if(user.getId()<=0){
             user.setId(users.size()+1);
         }
         users.add(user);
