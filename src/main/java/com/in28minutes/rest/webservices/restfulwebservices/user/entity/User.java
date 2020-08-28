@@ -1,11 +1,17 @@
 package com.in28minutes.rest.webservices.restfulwebservices.user.entity;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class User {
 
     private int id;
+
+    @Size(min = 2, message = "Name should contain at least 2 characters")
     private String name;
+
+    @Past(message = "Date of birth cannot be in the future")
     private Date birthDate;
 
     protected User(){}
